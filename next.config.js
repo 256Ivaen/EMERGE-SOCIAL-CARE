@@ -5,7 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Fix for Turbopack
   experimental: {
     turbo: {
       rules: {
