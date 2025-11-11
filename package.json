@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node remove-txt.js && node scripts/generate-seo.js",
+    "build": "next build && node remove-txt.js",
     "start": "next start",
     "lint": "eslint"
   },
