@@ -33,7 +33,7 @@ const Hero = () => {
               </h2>
             </div>
 
-            <p className="text-xs text-white/80 leading-relaxed">
+            <p className="text-xs text-white leading-relaxed">
               Expert Ofsted registration, advisory services, and compliance support 
               for children homes and supported accommodation providers across the UK.
             </p>
