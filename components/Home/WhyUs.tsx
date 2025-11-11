@@ -35,7 +35,7 @@ const WhyWorkWithUs = () => {
               Why Work With Us{" "}
             </h1>
             <h1 className="text-sm font-light uppercase text-start text-primary">
-              The Dev by Dev Advantage
+              The Emerge Social Care Advantage
             </h1>
           </div>
 

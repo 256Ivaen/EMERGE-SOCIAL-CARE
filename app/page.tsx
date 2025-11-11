@@ -6,23 +6,23 @@ import BlogsPage from '@/components/Home/Blogs'
 import WhyWorkWithUs from '@/components/Home/WhyUs'
 
 export const metadata: Metadata = {
-  title: 'Home - Dev by Dev',
+  title: 'Home - Emerge Social Care',
   description: 'Recruiting better developers through rigorous vetting and streamlined hiring processes. Find pre-vetted tech talent for your team.',
   openGraph: {
-    title: 'Dev by Dev - Recruiting Better Developers',
+    title: 'Emerge Social Care - Recruiting Better Developers',
     description: 'Recruiting better developers through rigorous vetting and streamlined hiring processes. Find pre-vetted tech talent for your team.',
     images: [
       {
         url: '/hero.png',
         width: 1200,
         height: 630,
-        alt: 'Dev by Dev - Recruiting Better Developers',
+        alt: 'Emerge Social Care - Recruiting Better Developers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dev by Dev - Recruiting Better Developers',
+    title: 'Emerge Social Care - Recruiting Better Developers',
     description: 'Recruiting better developers through rigorous vetting',
     images: ['/hero.png'],
   },

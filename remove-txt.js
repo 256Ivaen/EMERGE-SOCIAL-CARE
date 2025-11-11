@@ -12,13 +12,14 @@ function removeTxtFiles(dir) {
     
     if (stat.isDirectory()) {
       removeTxtFiles(filePath);
-    } else if (path.extname(file) === '.txt') {
+    } else if (path.extname(file) === '.txt' && 
+               !file.includes('robots') && 
+               !file.includes('sitemap')) {
       fs.unlinkSync(filePath);
       console.log(`Removed: ${filePath}`);
     }
   });
 }
 
-// Remove all .txt files from out directory
 removeTxtFiles(path.join(__dirname, 'out'));
-console.log('✅ All .txt files removed from build!');
+console.log('All unnecessary .txt files removed from build');

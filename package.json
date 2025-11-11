@@ -1,10 +1,10 @@
 {
-  "name": "devbydev",
+  "name": "emergesocialcare",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node remove-txt.js",
+    "build": "next build && node remove-txt.js && node scripts/generate-seo.js",
     "start": "next start",
     "lint": "eslint"
   },

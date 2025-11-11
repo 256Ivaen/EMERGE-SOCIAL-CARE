@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://devbydev.co.uk/',
+    siteUrl: 'https://emergesocialcare.co.uk/',
     generateRobotsTxt: true,
     generateIndexSitemap: false,
     outDir: 'out',

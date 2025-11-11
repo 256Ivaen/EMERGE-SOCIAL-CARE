@@ -8,7 +8,7 @@ export default function FAQPage() {
 
   const faqs = [
     {
-      q: "How does Dev by Dev's vetting process work?",
+      q: "How does Emerge Social Care's vetting process work?",
       a: "Our rigorous vetting process includes technical assessments, coding challenges, portfolio reviews, and behavioral interviews to ensure we match you with developers who have proven skills and fit your team culture."
     },
     {
@@ -64,7 +64,7 @@ export default function FAQPage() {
                   Find answers to common questions about our recruitment process
                 </h4>
                 <p className="text-xs max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-gray-600 text-left">
-                  We've compiled the most frequently asked questions about how Dev by Dev 
+                  We've compiled the most frequently asked questions about how Emerge Social Care 
                   connects companies with top-tier developers through our streamlined vetting 
                   and matching process.
                 </p>
