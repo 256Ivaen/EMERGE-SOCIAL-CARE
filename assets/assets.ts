@@ -1,4 +1,4 @@
-import Hero from './hero.png';
+import Hero from './hero.jpg';
 import AppleLogo from './downloadLogos/applelogo.svg';
 import PlayStoreLogo from './downloadLogos/playstorelogo.svg';
 import phoneImg from './Main Image.svg';
