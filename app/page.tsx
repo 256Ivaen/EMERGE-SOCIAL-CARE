@@ -6,25 +6,28 @@ import BlogsPage from '@/components/Home/Blogs'
 import WhyWorkWithUs from '@/components/Home/WhyUs'
 
 export const metadata: Metadata = {
-  title: 'Home - Dev by Dev',
-  description: 'Recruiting better developers through rigorous vetting and streamlined hiring processes. Find pre-vetted tech talent for your team.',
+  title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
+  description: 'Expert Ofsted registration, compliance support, and advisory services for children homes and supported accommodation providers. Build compliant, quality care services across the UK.',
+  keywords: 'Ofsted registration, children homes, supported accommodation, Ofsted compliance, social care consultancy, children services, care home registration, Ofsted advisory, social care training, care home software',
+  authors: [{ name: 'Emerge Social Care Advisory & Consulting' }],
   openGraph: {
-    title: 'Dev by Dev - Recruiting Better Developers',
-    description: 'Recruiting better developers through rigorous vetting and streamlined hiring processes. Find pre-vetted tech talent for your team.',
+    title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
+    description: 'End-to-end Ofsted registration and compliance support for children homes and supported accommodation providers across the UK. Building Compliance. Inspiring Quality.',
+    type: 'website',
     images: [
       {
-        url: '/hero.png',
+        url: '/hero.jpg', 
         width: 1200,
         height: 630,
-        alt: 'Dev by Dev - Recruiting Better Developers',
+        alt: 'Emerge Social Care - Building Compliance. Inspiring Quality.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dev by Dev - Recruiting Better Developers',
-    description: 'Recruiting better developers through rigorous vetting',
-    images: ['/hero.png'],
+    title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
+    description: 'Expert Ofsted registration and compliance support for children services. Building Compliance. Inspiring Quality.',
+    images: ['/hero.jpg'],
   },
 }
 
@@ -32,10 +35,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      {/* <Stats /> */}
-      {/* <WhyWorkWithUs /> */}
-      {/* <BlogsPage /> */}
-      {/* <FAQWithSpiral /> */}
+      <FAQWithSpiral />
     </div>
   )
 }
