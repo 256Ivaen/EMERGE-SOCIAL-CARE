@@ -6,7 +6,7 @@ import BlogsPage from '@/components/Home/Blogs'
 import WhyWorkWithUs from '@/components/Home/WhyUs'
 
 export const metadata: Metadata = {
-  title: 'Home - Emerge Social Care',
+  title: 'Emerge Social Care',
   description: 'Recruiting better developers through rigorous vetting and streamlined hiring processes. Find pre-vetted tech talent for your team.',
   openGraph: {
     title: 'Emerge Social Care - Recruiting Better Developers',
@@ -35,7 +35,7 @@ export default function Home() {
       {/* <Stats /> */}
       {/* <WhyWorkWithUs /> */}
       {/* <BlogsPage /> */}
-      {/* <FAQWithSpiral /> */}
+      <FAQWithSpiral />
     </div>
   )
 }

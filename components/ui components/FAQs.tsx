@@ -8,21 +8,21 @@ export default function FAQPage() {
 
   const faqs = [
     {
-      q: "How does Emerge Social Care's vetting process work?",
-      a: "Our rigorous vetting process includes technical assessments, coding challenges, portfolio reviews, and behavioral interviews to ensure we match you with developers who have proven skills and fit your team culture."
+      q: "How long does the Ofsted registration process take with Emerge?",
+      a: "Typically 3-6 months from start to registration. We streamline the process by handling all documentation, premises compliance, and interview preparation simultaneously. Our structured approach reduces delays and ensures you meet all regulatory requirements efficiently."
     },
     {
-      q: "How long does the hiring process typically take?",
-      a: "Most companies find their ideal developer within 1-2 weeks. Our streamlined process reduces traditional hiring timelines from months to days by providing pre-vetted candidates ready for interviews."
+      q: "What's included in your Ofsted registration support?",
+      a: "Our end-to-end support includes: SC1/SC2 form completion, policy & procedure development, premises compliance checks, location risk assessments, Responsible Individual preparation, financial forecasting, and mock Ofsted interviews. We manage the entire journey so you can focus on your vision."
     },
     {
-      q: "What if the developer isn't a good fit after hiring?",
-      a: "We offer a 90-day replacement guarantee. If your hired developer doesn't meet expectations, we'll find you a replacement at no additional cost."
+      q: "Do you help existing providers improve their Ofsted ratings?",
+      a: "Yes, we specialize in moving services from 'Requires Improvement' to 'Good' and 'Outstanding'. Our advisory services include mock inspections, quality audits, staff training, and improvement plans. We've helped numerous providers achieve higher ratings within one inspection cycle."
     },
     {
-      q: "What tech stacks and roles do you specialize in?",
-      a: "We cover all major tech stacks including JavaScript, Python, Java, Go, Rust, and more. We recruit for frontend, backend, full-stack, mobile, AI/ML, DevOps, and specialized roles."
-    }
+      q: "What are your success rates with Ofsted registrations?",
+      a: "We maintain a 98% success rate for first-time Ofsted registrations. Our comprehensive approach ensures all regulatory requirements are met before submission, significantly reducing the risk of rejection or delays."
+    },
   ];
 
   const toggleItem = (index: number) => {
@@ -34,16 +34,15 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-fit py-10">
+    <div className="min-h-fit py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Your exact header pattern */}
         <div className="flex items-center justify-between mb-10">
           <div>
             <h1 className="text-3xl font-light uppercase text-start text-primary">
               Frequently Asked Questions{" "}
             </h1>
             <h1 className="text-sm font-light uppercase text-start text-primary">
-              Everything You Need to Know About Our Process
+              Everything About Ofsted Registration & Compliance
             </h1>
           </div>
 
@@ -54,30 +53,36 @@ export default function FAQPage() {
           </div>
         </div>
 
-        {/* New FAQ Design - Vertically Centered */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="flex gap-10 flex-col">
             <div className="flex gap-4 flex-col">
               <div className="flex gap-2 flex-col">
                 <h4 className="text-3xl md:text-4xl tracking-tighter max-w-xl text-left font-regular text-gray-900">
-                  Find answers to common questions about our recruitment process
+                  Your Ofsted registration questions answered
                 </h4>
                 <p className="text-xs max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-gray-600 text-left">
-                  We've compiled the most frequently asked questions about how Emerge Social Care 
-                  connects companies with top-tier developers through our streamlined vetting 
-                  and matching process.
+                  Get clear answers about our Ofsted registration process, compliance support, 
+                  and how we help children's service providers achieve and maintain regulatory excellence.
                 </p>
               </div>
-              <div className="mt-4">
-                <button className="inline-flex items-center justify-center gap-4 px-4 py-2 text-xs border border-gray-300 rounded-md bg-white hover:bg-gray-50 transition-colors">
-                  Need more help ? Reach out
-                </button>
+            </div>
+            
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-xs text-gray-600">98% Ofsted registration success rate</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-xs text-gray-600">100+ children's services supported</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-xs text-gray-600">Expert guidance from registration to Outstanding</span>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Custom Accordion with Bottom Borders */}
           <div className="w-full">
             <div className="space-y-0">
               {faqs.map((faq, index) => (
@@ -87,9 +92,9 @@ export default function FAQPage() {
                 >
                   <button
                     onClick={() => toggleItem(index)}
-                    className="flex items-center justify-between w-full py-6 text-left hover:bg-gray-50/50 transition-colors"
+                    className="flex items-center justify-between w-full py-6 px-6 text-left hover:bg-gray-50/50 transition-colors"
                   >
-                    <span className="text-xs font-semibold text-gray-900 pr-4">
+                    <span className="text-xs font-semibold text-gray-900 pr-4 leading-relaxed">
                       {faq.q}
                     </span>
                     <ChevronDown 
@@ -106,7 +111,7 @@ export default function FAQPage() {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="pr-8">
+                    <div className="px-6">
                       <p className="text-xs text-gray-600 leading-relaxed">
                         {faq.a}
                       </p>

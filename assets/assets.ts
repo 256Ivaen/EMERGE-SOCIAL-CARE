@@ -1,10 +1,13 @@
-import Hero from './hero.jpg';
 import AppleLogo from './downloadLogos/applelogo.svg';
 import PlayStoreLogo from './downloadLogos/playstorelogo.svg';
 import phoneImg from './Main Image.svg';
 import logo from './logo.svg';
 import WhyUs from './whychooseus.png'
 import FooterLogo from './footerlogo.svg'
+
+import Hero1 from './Hero/hero1.jpg';
+import Hero2 from './Hero/hero2.jpg';
+import Hero3 from './Hero/hero3.jpg';
 
 // Brand 
 import Facebook from './Brands/facebook.png'
@@ -16,7 +19,7 @@ import Tiktok from './Brands/tiktok.svg'
 import FooterCta from './footercta.jpg'
 
 export const assets = {
-  Hero, 
+  Hero1, Hero2, Hero3, 
   AppleLogo, 
   PlayStoreLogo, 
   phoneImg, 

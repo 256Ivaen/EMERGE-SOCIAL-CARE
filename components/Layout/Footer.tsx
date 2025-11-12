@@ -44,7 +44,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-primary text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -58,10 +58,10 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="border-b border-gray-700"
+          className="border-b border-secondary"
         >
           <div className="mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center ">
               {/* Left Side - Background Image */}
               <div className="relative h-64 lg:h-full">
                 <Image
@@ -73,8 +73,8 @@ const Footer = () => {
               </div>
 
               {/* Right Side - Your Content */}
-              <div className="py-12 text-start">
-                <h3 className="text-2xl md:text-3xl font-light mb-4">
+              <div className="py-10 text-start px-4 sm:px-6 lg:px-8">
+                <h3 className="text-2xl md:text-3xl font-light mb-4 ">
                   Ready to Transform Your Children's Service?
                 </h3>
                 <p className="text-gray-300 text-sm mb-8 max-w-2xl">
@@ -82,10 +82,10 @@ const Footer = () => {
                   strengthened their quality, and achieved outstanding outcomes with Emerge.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-start">
-                  <button className="bg-primary text-white text-sm uppercase font-light px-8 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg">
+                  <button className="bg-secondary text-white text-xs uppercase font-light px-8 py-1.5 rounded-full hover:bg-secondary/90 transition-all duration-300 shadow-lg">
                     Get Started Today
                   </button>
-                  <button className="border border-gray-600 text-gray-300 text-sm uppercase font-light px-8 py-3 rounded-full hover:border-primary hover:text-primary transition-all duration-300">
+                  <button className="border-2 border-secondary text-white text-xs uppercase font-normal px-8 py-1.5 rounded-full transition-all duration-300">
                     Schedule a Call
                   </button>
                 </div>
@@ -168,7 +168,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 bg-gray-900/95 backdrop-blur-sm">
+        <div className="border-t border-gray-800 bg-secondary backdrop-blur-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-center md:text-left">

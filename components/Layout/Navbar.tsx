@@ -18,7 +18,6 @@ const Navbar = () => {
     { text: "Training", path: "/training" },
     { text: "Software", path: "/software" },
     { text: "How We Work", path: "/how-we-work" },
-    { text: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => {

@@ -1,77 +1,153 @@
 "use client";
 
-import React from "react";
-import { FiSearch, FiMapPin } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { assets } from "../../assets/assets";
 import Image from "next/image";
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      title: "EMERGE SOCIAL CARE",
+      subtitle: "Building Compliance. Inspiring Quality.",
+      description: "Expert Ofsted registration, advisory services, and compliance support for children's homes and supported accommodation providers across the UK.",
+      bgImage: assets.Hero1,
+      cta: "Get Started"
+    },
+    {
+      id: 2, 
+      title: "OFSTED REGISTRATION SUPPORT",
+      subtitle: "From First Idea to Fully Operational",
+      description: "End-to-end Ofsted registration for Children's Homes, Supported Accommodation, and Family Assessment Units. We handle the paperwork so you can focus on care.",
+      bgImage: assets.Hero2,
+      cta: "Start Registration"
+    },
+    {
+      id: 3,
+      title: "GROW YOUR CHILDREN'S SERVICE",
+      subtitle: "From Vision to Vibrant Reality", 
+      description: "Complete pathway from initial idea to sustainable operation. Service design, market analysis, and financial forecasting for lasting impact.",
+      bgImage: assets.Hero3,
+      cta: "Book Strategy Session"
+    }
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const slideVariants = {
+    enter: {
+      x: "100%",
+      filter: "blur(8px)",
+      scale: 1.02
+    },
+    center: {
+      x: 0,
+      filter: "blur(0px)",
+      scale: 1,
+      transition: {
+        x: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94] },
+        filter: { duration: 0.8, ease: "easeOut" },
+        scale: { duration: 1.2, ease: "easeOut" }
+      }
+    },
+    exit: {
+      x: "-100%",
+      filter: "blur(8px)",
+      scale: 0.98,
+      transition: {
+        x: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94] },
+        filter: { duration: 0.6, ease: "easeIn" },
+        scale: { duration: 1, ease: "easeIn" }
+      }
+    }
+  };
+
+  // Content animation
+  const contentVariants = {
+    enter: {
+      opacity: 0,
+      y: 30
+    },
+    center: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.4
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -30,
+      transition: {
+        duration: 0.5,
+        ease: "easeIn"
+      }
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center py-16 overflow-hidden relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={assets.Hero}
-          alt="Emerge Social Care Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.div
+          key={currentSlide}
+          className="absolute inset-0 z-0"
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+        >
+          <Image
+            src={slides[currentSlide].bgImage}
+            alt="Emerge Social Care Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="container mx-auto px-4 w-full relative z-10">
-        <div className="flex flex-col items-start text-left max-w-2xl">
-          {/* Content */}
-          <div className="space-y-4 w-full">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                EMERGE SOCIAL CARE
-              </h1>
-              <h2 className="text-lg md:text-xl font-light text-white/90 mt-2">
-                Building Compliance. Inspiring Quality.
-              </h2>
-            </div>
-
-            <p className="text-xs text-white leading-relaxed">
-              Expert Ofsted registration, advisory services, and compliance support 
-              for children homes and supported accommodation providers across the UK.
-            </p>
-
-            {/* Search Bar */}
-            <div className="bg-white rounded-full shadow-md p-2 flex flex-col border border-primary sm:flex-row gap-2 sm:gap-0 items-center w-full max-w-xl">
-              <div className="flex items-center flex-1 px-4 w-full sm:w-auto">
-                <FiSearch className="w-4 h-4 text-primary mr-2" />
-                <input
-                  type="text"
-                  placeholder="What service do you need?"
-                  className="flex-1 outline-none text-xs text-primary placeholder-gray-400 bg-transparent"
-                />
+        <div className="flex flex-col items-start text-left max-w-3xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              className="space-y-4 w-full"
+              variants={contentVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+            >
+              <div>
+                <motion.h1 className="text-3xl md:text-6xl font-light text-white leading-tight">
+                  {slides[currentSlide].title}
+                </motion.h1>
+                <motion.h2 className="text-lg md:text-xl font-light text-white/90 mt-2">
+                  {slides[currentSlide].subtitle}
+                </motion.h2>
               </div>
 
-              <div className="hidden sm:block w-px h-8 bg-primary"></div>
+              <motion.p className="text-xs text-white leading-relaxed">
+                {slides[currentSlide].description}
+              </motion.p>
 
-              <div className="flex items-center flex-1 px-4 w-full sm:w-auto">
-                <FiMapPin className="w-4 h-4 text-primary mr-2" />
-                <input
-                  type="text"
-                  placeholder="Your location"
-                  className="flex-1 outline-none text-xs text-primary placeholder-gray-400 bg-transparent"
-                />
-              </div>
-
-              <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-xs font-medium transition-colors w-full sm:w-auto">
-                Get Started
-              </button>
-            </div>
-
-            <div className="text-white/80">
-              <p className="text-xs mb-1">Our Expertise:</p>
-              <p className="text-xs text-primary">
-                Ofsted Registration • Advisory Services • Training & Development
-              </p>
-            </div>
-          </div>
+              <motion.button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-sm uppercase font-medium transition-colors w-full sm:w-auto max-w-xs">
+                {slides[currentSlide].cta}
+              </motion.button>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
