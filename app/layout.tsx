@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://emergesocialcare.co.uk',
     images: [
       {
-        url: '/hero.jpg',
+        url: '/hero.png',
         width: 1200,
         height: 630,
         alt: 'Emerge Social Care - Building Compliance. Inspiring Quality.',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
     description: 'Expert Ofsted registration and compliance support for children services',
     creator: '@emergesocialcare',
-    images: ['/hero.jpg'],
+    images: ['/hero.png'],
   },
   manifest: '/manifest.json',
   metadataBase: new URL('https://emergesocialcare.co.uk'),
