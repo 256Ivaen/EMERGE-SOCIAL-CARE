@@ -5,6 +5,12 @@ import Stats from '@/components/ui components/Stats'
 import BlogsPage from '@/components/Home/Blogs'
 import WhyWorkWithUs from '@/components/Home/WhyUs'
 
+const baseUrl = process.env.NODE_ENV === 'production' 
+  ? 'https://emergesocialcare.co.uk'
+  : process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+
 export const metadata: Metadata = {
   title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
   description: 'Expert Ofsted registration, compliance support, and advisory services for children homes and supported accommodation providers. Build compliant, quality care services across the UK.',
@@ -19,10 +25,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     siteName: 'Emerge Social Care',
-    url: 'https://emergesocialcare.co.uk',
+    url: `${baseUrl}`,
     images: [
       {
-        url: '/hero.png',
+        url: `${baseUrl}/hero.jpg`, // Use full absolute path
         width: 1200,
         height: 630,
         alt: 'Emerge Social Care - Building Compliance. Inspiring Quality.',
@@ -34,9 +40,9 @@ export const metadata: Metadata = {
     title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
     description: 'Expert Ofsted registration and compliance support for children services. Building Compliance. Inspiring Quality.',
     creator: '@emergesocialcare',
-    images: ['/hero.jpg'],
+    images: [`${baseUrl}/hero.jpg`],
   },
-  metadataBase: new URL('https://emergesocialcare.co.uk'),
+  metadataBase: new URL(baseUrl),
   alternates: {
     canonical: '/',
   },
