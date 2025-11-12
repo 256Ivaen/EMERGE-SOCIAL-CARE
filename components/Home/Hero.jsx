@@ -72,7 +72,6 @@ const Hero = () => {
     }
   };
 
-  // Content animation
   const contentVariants = {
     enter: {
       opacity: 0,
@@ -98,7 +97,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center py-16 overflow-hidden relative">
+    <section className="h-[calc(100vh-64px)] flex items-center overflow-hidden relative">
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={currentSlide}
