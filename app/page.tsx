@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/hero.jpg', 
+        url: '/hero.png', 
         width: 1200,
         height: 630,
         alt: 'Emerge Social Care - Building Compliance. Inspiring Quality.',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
     description: 'Expert Ofsted registration and compliance support for children services. Building Compliance. Inspiring Quality.',
-    images: ['/hero.jpg'],
+    images: ['/hero.png'],
   },
 }
 
