@@ -72,18 +72,10 @@ const WhyChooseUs = () => {
     center: {
       x: 0,
       opacity: 1,
-      transition: {
-        x: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-        opacity: { duration: 0.6, ease: "easeOut" },
-      }
     },
     exit: {
       x: -100,
       opacity: 0,
-      transition: {
-        x: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-        opacity: { duration: 0.6, ease: "easeIn" },
-      }
     }
   };
 
@@ -95,19 +87,10 @@ const WhyChooseUs = () => {
     center: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.3
-      }
     },
     exit: {
       opacity: 0,
       y: -20,
-      transition: {
-        duration: 0.4,
-        ease: "easeIn"
-      }
     }
   };
 
@@ -143,6 +126,10 @@ const WhyChooseUs = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
                 >
                   <div className="w-full h-48 md:h-full relative">
                     <Image
@@ -166,6 +153,11 @@ const WhyChooseUs = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: 0.3
+                  }}
                 >
                   <div>
                     <p className="text-xs font-semibold text-white/90">{cards[activeCard].title}</p>

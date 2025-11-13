@@ -7,7 +7,6 @@ import WhyWorkWithUs from '@/components/Home/WhyUs'
 import AboutSection from '@/components/Home/About'
 import CTASection from '@/components/Home/CTAsection'
 import ServicesSection from '@/components/Home/Services'
-import StepsSection from '@/components/Home/StepsTaken'
 
 export const metadata: Metadata = {
   title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
@@ -43,7 +42,6 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <WhyWorkWithUs />
-      {/* <StepsSection /> */}
       <CTASection />
       <FAQWithSpiral />
     </div>

@@ -8,7 +8,18 @@ import Image from 'next/image';
 import { assets } from '@/assets/assets';
 import { useRouter } from 'next/navigation';
 
-const ServiceCard = ({ service, index }) => {
+interface ServiceCardProps {
+  service: {
+    id: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    imageUrl: any; // Changed from string to any to accept StaticImageData
+  };
+  index: number;
+}
+
+const ServiceCard = ({ service, index }: ServiceCardProps) => {
   const router = useRouter();
 
   const handleServiceClick = () => {
