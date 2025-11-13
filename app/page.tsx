@@ -4,6 +4,10 @@ import FAQWithSpiral from '@/components/ui components/FAQs'
 import Stats from '@/components/ui components/Stats'
 import BlogsPage from '@/components/Home/Blogs'
 import WhyWorkWithUs from '@/components/Home/WhyUs'
+import AboutSection from '@/components/Home/About'
+import CTASection from '@/components/Home/CTAsection'
+import ServicesSection from '@/components/Home/Services'
+import StepsSection from '@/components/Home/StepsTaken'
 
 export const metadata: Metadata = {
   title: 'Emerge Social Care - Ofsted Registration & Compliance Experts',
@@ -35,6 +39,12 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <Stats />
+      <AboutSection />
+      <ServicesSection />
+      <WhyWorkWithUs />
+      {/* <StepsSection /> */}
+      <CTASection />
       <FAQWithSpiral />
     </div>
   )

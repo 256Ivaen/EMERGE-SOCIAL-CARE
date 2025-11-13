@@ -156,7 +156,6 @@ export default function BrandDisplay({
     { id: '2', name: 'Google', logo: assets.Google },
     { id: '3', name: 'Facebook', logo: assets.Facebook },
     { id: '4', name: 'Tiktok', logo: assets.Tiktok },
-    { id: '5', name: 'Tekjuice', logo: assets.Tekjuice },
   ];
 
   const displayBrands = brands && brands.length > 0 ? brands : defaultBrands;

@@ -18,6 +18,9 @@ import Tiktok from './Brands/tiktok.svg'
 
 import FooterCta from './footercta.jpg'
 
+import CTAImg from './cta.png'
+import AboutEmerge from './aboutemerge.png'
+
 export const assets = {
   Hero1, Hero2, Hero3, 
   AppleLogo, 
@@ -28,6 +31,9 @@ export const assets = {
   FooterLogo,
 
   FooterCta,
+
+  CTAImg,
+  AboutEmerge,
 
   // Brands 
   Facebook, Tekjuice, Tiktok, Microsoft, Google,

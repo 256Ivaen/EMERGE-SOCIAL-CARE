@@ -11,28 +11,28 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
+      title: "GROW YOUR CHILDREN'S SERVICE",
+      subtitle: "From Vision to Vibrant Reality", 
+      description: "Complete pathway from initial idea to sustainable operation. Service design, market analysis, and financial forecasting for lasting impact.",
+      bgImage: assets.Hero1,
+      cta: "Book Strategy Session"
+    },
+    {
+      id: 2,
       title: "EMERGE SOCIAL CARE",
       subtitle: "Building Compliance. Inspiring Quality.",
       description: "Expert Ofsted registration, advisory services, and compliance support for children's homes and supported accommodation providers across the UK.",
-      bgImage: assets.Hero1,
+      bgImage: assets.Hero3,
       cta: "Get Started"
     },
     {
-      id: 2, 
+      id: 3, 
       title: "OFSTED REGISTRATION SUPPORT",
       subtitle: "From First Idea to Fully Operational",
       description: "End-to-end Ofsted registration for Children's Homes, Supported Accommodation, and Family Assessment Units. We handle the paperwork so you can focus on care.",
       bgImage: assets.Hero2,
       cta: "Start Registration"
     },
-    {
-      id: 3,
-      title: "GROW YOUR CHILDREN'S SERVICE",
-      subtitle: "From Vision to Vibrant Reality", 
-      description: "Complete pathway from initial idea to sustainable operation. Service design, market analysis, and financial forecasting for lasting impact.",
-      bgImage: assets.Hero3,
-      cta: "Book Strategy Session"
-    }
   ];
 
   // Auto-advance slides

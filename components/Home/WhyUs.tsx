@@ -1,103 +1,200 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { assets } from "../../assets/assets";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const WhyWorkWithUs = () => {
-  const [activeStep, setActiveStep] = useState(0);
+const WhyChooseUs = () => {
+  const [activeCard, setActiveCard] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const steps = [
+  const cards = [
     {
-      title: "Vetted Talent Pool",
-      description: "Access pre-screened developers who have passed rigorous technical assessments and coding challenges."
+      id: 1,
+      title: "Why Choose Emerge",
+      subtitle: "Hands-On Expertise",
+      description: "We've worked in, managed, and registered multiple Ofsted services with proven success helping homes move from Requires Improvement to Good and Outstanding ratings.",
+      imageSrc: assets.Hero1,
+      imageAlt: "Hands-On Expertise"
     },
     {
-      title: "Fast Hiring Process", 
-      description: "Reduce your time-to-hire from weeks to days with our streamlined recruitment pipeline."
+      id: 2,
+      title: "Why Choose Emerge", 
+      subtitle: "Total Guidance",
+      description: "From form-filling to leadership coaching—we do the heavy lifting so you can focus on your vision. No templates or generic packs—every plan is customised to your service.",
+      imageSrc: assets.Hero2,
+      imageAlt: "Total Guidance"
     },
     {
-      title: "Quality Guarantee",
-      description: "90-day replacement guarantee if your hired developer doesn't meet expectations."
+      id: 3,
+      title: "Why Choose Emerge",
+      subtitle: "Regulatory Confidence",
+      description: "We prepare you for interviews, inspections, and full compliance. We speak both the language of care and the language of business—you'll get operational rigour and practice integrity.",
+      imageSrc: assets.Hero3,
+      imageAlt: "Regulatory Confidence"
     },
     {
-      title: "Cost Effective",
-      description: "Save on recruitment costs with our flat-rate pricing and no hidden fees."
+      id: 4,
+      title: "Why Choose Emerge",
+      subtitle: "End-to-End Partnership",
+      description: "From the first form to the first inspection—we walk with you every step of the way. Our support is designed to be simple, clear, and action-oriented—no jargon, no buried complexity, just real progress.",
+      imageSrc: assets.Hero1,
+      imageAlt: "End-to-End Partnership"
     }
   ];
 
+  // Auto-advance cards every 5 seconds
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % cards.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [cards.length, isHovered]);
+
+  const nextCard = () => {
+    setActiveCard((prev) => (prev + 1) % cards.length);
+  };
+
+  const prevCard = () => {
+    setActiveCard((prev) => (prev - 1 + cards.length) % cards.length);
+  };
+
+  const slideVariants = {
+    enter: {
+      x: 100,
+      opacity: 0,
+    },
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        x: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+        opacity: { duration: 0.6, ease: "easeOut" },
+      }
+    },
+    exit: {
+      x: -100,
+      opacity: 0,
+      transition: {
+        x: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+        opacity: { duration: 0.6, ease: "easeIn" },
+      }
+    }
+  };
+
+  const contentVariants = {
+    enter: {
+      opacity: 0,
+      y: 20
+    },
+    center: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.3
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.4,
+        ease: "easeIn"
+      }
+    }
+  };
+
   return (
-    <div className="min-h-fit py-10">
+    <div className="min-h-fit py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="flex items-center justify-between mb-10">
           <div>
             <h1 className="text-3xl font-light uppercase text-start text-primary">
-              Why Work With Us{" "}
+              Why Choose Emerge
             </h1>
             <h1 className="text-sm font-light uppercase text-start text-primary">
-              The Emerge Social Care Advantage
+              Building Compliance. Inspiring Quality.
             </h1>
-          </div>
-
-          <div className="group inline-block">
-            <button className="text-xs uppercase bg-primary py-2 px-5 rounded-full text-white border border-transparent transition-all duration-300 ease-in-out group-hover:bg-transparent group-hover:text-primary group-hover:border-primary">
-              Get Started
-            </button>
           </div>
         </div>
 
-        {/* Content Section - Centered vertically */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Image */}
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-md">
-              <Image
-                src={assets.WhyUs}
-                alt="Why Work With Us"
-                width={400}
-                height={500}
-                className="rounded-lg object-cover w-full h-auto"
-              />
-            </div>
-          </div>
-
-          {/* Right Side - Stepper */}
-          <div className="flex items-center">
-            <div className="relative w-full">
-              {/* Vertical Line - Fixed to not overlap last step */}
-              <div className="absolute left-4 top-2 h-[calc(100%-2rem)] w-0.5 bg-gray-200 dark:bg-gray-700"></div>
-              
-              {/* Steps */}
-              <div className="space-y-8">
-                {steps.map((step, index) => (
-                  <div key={index} className="relative flex items-start gap-4">
-                    {/* Step Circle - Updated to match your stepper examples exactly */}
-                    <div 
-                      className={`flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 font-semibold text-sm transition-colors ${
-                        index === activeStep 
-                          ? "bg-primary border-primary text-white" 
-                          : "bg-gray-100 text-gray-500 border-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600"
-                      }`}
-                    >
-                      {index + 1}
-                    </div>
-
-                    {/* Step Content */}
-                    <div 
-                      className="cursor-pointer pt-1 flex-1"
-                      onClick={() => setActiveStep(index)}
-                    >
-                      <h3 className={`text-xs font-semibold mb-1 transition-colors ${
-                        index === activeStep ? "text-primary" : "text-gray-700"
-                      }`}>
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
+        {/* Card Section */}
+        <div 
+          className="w-full max-w-7xl mx-auto"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="overflow-hidden rounded-xl bg-primary text-white flex flex-col md:flex-row">
+            {/* Image Section - Rectangular */}
+            <div className="md:w-1/3 w-full relative overflow-hidden order-2 md:order-1">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.div
+                  key={activeCard}
+                  className="w-full h-full"
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                >
+                  <div className="w-full h-48 md:h-full relative">
+                    <Image
+                      src={cards[activeCard].imageSrc}
+                      alt={cards[activeCard].imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
-                ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Content Section */}
+            <div className="md:w-2/3 w-full p-6 md:p-8 flex flex-col justify-center relative order-1 md:order-2">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeCard}
+                  variants={contentVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                >
+                  <div>
+                    <p className="text-xs font-semibold text-white/90">{cards[activeCard].title}</p>
+                    <h2 className="mt-1 text-2xl md:text-3xl font-light tracking-tight text-white">
+                      {cards[activeCard].subtitle}
+                    </h2>
+                    <p className="mt-4 text-white/90 text-xs leading-relaxed">
+                      {cards[activeCard].description}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Arrow Navigation */}
+              <div className="flex space-x-4 mt-8">
+                <button
+                  onClick={prevCard}
+                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+                  aria-label="Previous reason"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextCard}
+                  className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+                  aria-label="Next reason"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>
@@ -107,4 +204,4 @@ const WhyWorkWithUs = () => {
   );
 };
 
-export default WhyWorkWithUs;
+export default WhyChooseUs;

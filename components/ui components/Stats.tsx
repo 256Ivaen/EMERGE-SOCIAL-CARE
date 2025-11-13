@@ -12,17 +12,11 @@ export default function Stats() {
         <div className="flex items-center justify-between mb-10">
           <div>
             <h1 className="text-3xl font-light uppercase text-start text-primary">
-              Trusted By Thousands{" "}
+              Trusted By Leaders
             </h1>
             <h1 className="text-sm font-light uppercase text-start text-primary">
-              Join Companies That Found Their Perfect Developers
+              Join Services That Achieved Ofsted Compliance & Excellence
             </h1>
-          </div>
-
-          <div className="group inline-block">
-            <button className="text-xs uppercase bg-primary py-2 px-5 rounded-full text-white border border-transparent transition-all duration-300 ease-in-out group-hover:bg-transparent group-hover:text-primary group-hover:border-primary">
-              View Success Stories
-            </button>
           </div>
         </div>
         <BrandDisplay />
