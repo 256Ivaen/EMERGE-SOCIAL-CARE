@@ -38,11 +38,11 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <Stats />
       <AboutSection />
       <ServicesSection />
       <WhyWorkWithUs />
-      <CTASection />
+      {/* <CTASection /> */}
+      <Stats />
       <FAQWithSpiral />
     </div>
   )
