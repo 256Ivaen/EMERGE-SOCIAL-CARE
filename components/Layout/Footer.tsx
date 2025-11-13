@@ -53,7 +53,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="relative z-10">
         {/* CTA Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -62,7 +62,6 @@ const Footer = () => {
         >
           <div className="mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center ">
-              {/* Left Side - Background Image */}
               <div className="relative h-64 lg:h-full">
                 <Image
                   src={assets.FooterCta}
@@ -72,7 +71,6 @@ const Footer = () => {
                 />
               </div>
 
-              {/* Right Side - Your Content */}
               <div className="py-10 text-start px-4 sm:px-6 lg:px-8">
                 <h3 className="text-2xl md:text-3xl font-light mb-4 ">
                   Ready to Transform Your Children's Service?
@@ -92,7 +90,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Links Section */}
         <motion.div
